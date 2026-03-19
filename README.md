@@ -30,8 +30,8 @@ This project demonstrates:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/K-Means-Clustering.git
-cd K-Means-Clustering
+git clone https://github.com/lixy4567/Scale-Up-Tutorial-II-Lab-Session.git
+cd Scale-Up-Tutorial-II-Lab-Session
 ```
 
 ### 2. Install dependencies
