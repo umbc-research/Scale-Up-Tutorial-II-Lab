@@ -47,6 +47,7 @@ Create an PyVenv environment and instal dependencies
 
 ```bash
 python -m venv /umbc/rs/hpcf-scales/users/${username}/KMeans
+source /umbc/rs/hpcf-scales/users/${username}/KMeans/bin/activate
 pip install -r requirements.txt
 ```
 
