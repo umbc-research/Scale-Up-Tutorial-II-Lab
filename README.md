@@ -62,21 +62,24 @@ All output figures will be saved to the `output/` directory.
 - seaborn
 - scikit-learn
 
-See `requirements.txt` for version details. See Install dependencies" for install instructions.
+See `requirements.txt` for version details. See Install dependencies" for installation instructions.
 
 ## HPC Cluster Usage
 
 If running on an HPC cluster with SLURM (e.g., UMBC's HPCF):
 
-Methods 1: 
+**Methods 1:** 
+
+Create a SLURM script to submit your job. Please refer to UMBC chip wiki tutorial on [Batch run using sbatch with a Slurm script](https://umbc.atlassian.net/wiki/spaces/faq/pages/1325957222/How+to+Run+on+chip#Batch-run-using-sbatch-with-a-Slurm-script).
+ 
+Edit `run_kmeans.slurm` to load a Python module and activate your Python virtual environment. Please refer to Tutorial II materials, or [UMBC chip wiki tutorial on PyVenv](https://umbc.atlassian.net/wiki/spaces/faq/pages/1033863206/pyVenv+virtual+environments).
 
 ```bash
 sbatch run_kmeans.slurm
 ```
 
-Edit `run_kmeans.slurm` to set your username and activate your Python virtual environment.
 
-Method 2:
+**Method 2:**
 
 Run it in an interactive session
 
