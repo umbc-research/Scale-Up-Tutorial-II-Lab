@@ -8,8 +8,8 @@ This project demonstrates:
 - Loading and exploring the Iris dataset
 - Exploratory Data Analysis (EDA) with visualizations
 - Finding the optimal number of clusters using the **Elbow Method**
-- Applying K-Means clustering with K=3
-- Visual comparison of clustering results
+- Verifying Elbow Method by K-Means clustering with K=[1, 2, 3, 4]
+- Visual comparison of clustering results using different K values
 
 ## Project Structure
 
@@ -25,7 +25,7 @@ This project demonstrates:
 └── LICENSE
 ```
 
-## Quick Start
+## Environment Setup
 
 ### 1. Clone the repository
 
@@ -36,15 +36,20 @@ cd K-Means-Clustering
 
 ### 2. Install dependencies
 
+For HPC use on chip cluster, start an interactive session by 'srun' and load the Python module
+
 ```bash
+srun --cluster=chip-cpu --mem=5000 --time=1:30:00 --qos=normal --account=hpcf-scales --partition=general --pty $SHELL
+module load Python/3.12.3-GCCcore-13.3.0
+```
+
+Create an PyVenv environment and instal dependencies
+
+```bash
+python -m venv /umbc/rs/hpcf-scales/users/${username}/KMeans
 pip install -r requirements.txt
 ```
 
-### 3. Run the script
-
-```bash
-python K_Means_Clustering.py
-```
 
 All output figures will be saved to the `output/` directory.
 
@@ -57,11 +62,13 @@ All output figures will be saved to the `output/` directory.
 - seaborn
 - scikit-learn
 
-See `requirements.txt` for version details.
+See `requirements.txt` for version details. See Install dependencies" for install instructions.
 
 ## HPC Cluster Usage
 
 If running on an HPC cluster with SLURM (e.g., UMBC's HPCF):
+
+Methods 1: 
 
 ```bash
 sbatch run_kmeans.slurm
@@ -69,13 +76,22 @@ sbatch run_kmeans.slurm
 
 Edit `run_kmeans.slurm` to set your username and activate your Python virtual environment.
 
+Method 2:
+
+Run it in an interactive session
+
+```bash
+srun --cluster=chip-cpu --mem=5000 --time=1:30:00 --qos=normal --account=hpcf-scales --partition=general --pty $SHELL
+python K_Means_Clustering.py
+```
+
 ## What the Script Does
 
 1. **Load Data**: Imports the Iris dataset using scikit-learn
 2. **EDA**: Generates a pairplot showing feature relationships colored by species
 3. **Elbow Method**: Computes Within-Cluster Sum of Squares (WCSS) for K=1 to 10
 4. **Comparison**: Visualizes clustering results for K=1,2,3,4 alongside original labels
-5. **Final Model**: Applies K-Means with K=3 (optimal based on elbow method)
+5. **Final Model**: Confirms K-Means with K=3 is the optimal based on elbow method and comparison results
 
 ## Expected Output
 
@@ -90,6 +106,13 @@ This project is designed with reproducibility in mind:
 - Fixed random state (`random_state=0`) in K-Means for deterministic results
 - All dependencies are version-pinned
 - Clear, documented code structure
+
+## Attribution
+
+The K-Means clustering implementation in this project is based on the
+[Clustering Algorithms from Scratch](https://github.com/milaan9/Clustering_Algorithms_from_Scratch)
+repository by [milaan9](https://github.com/milaan9), modified to run on HPC clusters
+via SLURM job scheduling and extended with EDA visualizations.
 
 ## License
 
