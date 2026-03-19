@@ -63,6 +63,7 @@ PythonEnv/
 *.swp
 *.swo
 *~
+*.
 
 # Jupyter Notebook
 .ipynb_checkpoints
