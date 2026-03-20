@@ -80,7 +80,7 @@ python K_Means_Clustering.py
 
 Create a SLURM script to submit your job. Please refer to UMBC chip wiki tutorial on [Batch run using sbatch with a Slurm script](https://umbc.atlassian.net/wiki/spaces/faq/pages/1325957222/How+to+Run+on+chip#Batch-run-using-sbatch-with-a-Slurm-script).
  
-Edit `run_kmeans.slurm` to load a Python module and activate your Python virtual environment. Please refer to Tutorial II materials, or [UMBC chip wiki tutorial on PyVenv](https://umbc.atlassian.net/wiki/spaces/faq/pages/1033863206/pyVenv+virtual+environments).
+Edit `run_kmeans.slurm` to load a Python module and activate your Python virtual environment. Please refer to [Tutorial II materials](https://docs.google.com/presentation/d/1ttjGDKAK_kmbxQ1E-RXfCSomNF48Coe9-N2AlGL4zpg/edit?usp=sharing), or [UMBC chip wiki tutorial on PyVenv](https://umbc.atlassian.net/wiki/spaces/faq/pages/1033863206/pyVenv+virtual+environments).
 
 ```bash
 sbatch run_kmeans.slurm
