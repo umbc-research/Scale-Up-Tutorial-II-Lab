@@ -69,7 +69,14 @@ See `requirements.txt` for version details. See Install dependencies" for instal
 
 If running on an HPC cluster with SLURM (e.g., UMBC's HPCF):
 
-**Methods 1:** 
+**Method 1:** Run it in an interactive session
+
+```bash
+srun --cluster=chip-cpu --mem=5000 --time=1:30:00 --qos=normal --account=hpcf-scales --partition=general --pty $SHELL
+python K_Means_Clustering.py
+```
+
+**Method 2:** Use a Slurm script
 
 Create a SLURM script to submit your job. Please refer to UMBC chip wiki tutorial on [Batch run using sbatch with a Slurm script](https://umbc.atlassian.net/wiki/spaces/faq/pages/1325957222/How+to+Run+on+chip#Batch-run-using-sbatch-with-a-Slurm-script).
  
@@ -79,15 +86,6 @@ Edit `run_kmeans.slurm` to load a Python module and activate your Python virtual
 sbatch run_kmeans.slurm
 ```
 
-
-**Method 2:**
-
-Run it in an interactive session
-
-```bash
-srun --cluster=chip-cpu --mem=5000 --time=1:30:00 --qos=normal --account=hpcf-scales --partition=general --pty $SHELL
-python K_Means_Clustering.py
-```
 
 ## What the Script Does
 
