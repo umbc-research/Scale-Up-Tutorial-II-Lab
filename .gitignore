@@ -79,8 +79,8 @@ output/*.jpg
 output/*.csv
 
 # SLURM output files
-slurm.out
-slurm.err
+*.out
+*.err
 
 # Logs
 *.log

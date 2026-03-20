@@ -59,6 +59,11 @@ def main():
     x = features
 
     print("\n" + "=" * 50)
+    print("Using [SepalLengthCm, SepalWidthCm, PetalLengthCm, PetalWidthCm] as input features for K-Means clustering.\n"
+          "And the 'Species' column is the target variable that we will try to cluster WITHOUT using it in the algorithm.")
+    print("=" * 50)
+    
+    print("\n" + "=" * 50)
     print("Finding the optimum number of clusters using the Elbow Method...")
 
     wcss = []
