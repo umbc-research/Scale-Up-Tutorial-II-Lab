@@ -36,14 +36,14 @@ cd Scale-Up-Tutorial-II-Lab-Session
 
 ### 2. Install dependencies
 
-For HPC use on chip cluster, start an interactive session by 'srun' and load the Python module
+For HPC use on chip cluster, start an interactive session by 'srun' and load the Python module to activate PyVenv:
 
 ```bash
 srun --cluster=chip-cpu --mem=5000 --time=1:30:00 --qos=normal --account=hpcf-scales --partition=general --pty $SHELL
 module load Python/3.12.3-GCCcore-13.3.0
 ```
 
-Create an PyVenv environment and instal dependencies
+For all users: Create a PyVenv environment and install dependencies
 
 ```bash
 python -m venv /umbc/rs/hpcf-scales/users/${username}/KMeans
